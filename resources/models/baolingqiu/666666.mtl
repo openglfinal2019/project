@@ -1,0 +1,90 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# 创建的文件:26.06.2019 14:10:18
+
+newmtl wire_006135058
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.0235 0.5294 0.2275
+	Kd 0.0235 0.5294 0.2275
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 4.jpg
+
+newmtl wire_154185229
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.6039 0.7255 0.8980
+	Kd 0.6039 0.7255 0.8980
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 3.jpg
+	
+newmtl wire_225088199
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.8824 0.3451 0.7804
+	Kd 0.8824 0.3451 0.7804
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 4.jpg
+
+newmtl wire_061135006
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.2392 0.5294 0.0235
+	Kd 0.2392 0.5294 0.0235
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 4.jpg
+
+newmtl wire_176026026
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.6902 0.1020 0.1020
+	Kd 0.6902 0.1020 0.1020
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 1.png
+
+newmtl wire_085028177
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.3333 0.1098 0.6941
+	Kd 0.3333 0.1098 0.6941
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 4.jpg
+
+newmtl wire_138008110
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.5412 0.0314 0.4314
+	Kd 0.5412 0.0314 0.4314
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 2.jpg
+
+newmtl wire_228214153
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.8941 0.8392 0.6000
+	Kd 0.8941 0.8392 0.6000
+	Ks 0.3500 0.3500 0.3500
+	map_Kd 2.jpg

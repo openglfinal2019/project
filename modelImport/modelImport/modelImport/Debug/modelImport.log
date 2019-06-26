@@ -1,32 +1,22 @@
 ﻿  modelWithLight.cpp
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\mesh.h(115): warning C4305: “初始化”: 从“double”到“float”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(117): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(121): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(122): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(123): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(132): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(136): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(137): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(138): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(147): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(151): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(152): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(153): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(162): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(166): warning C4305: “参数”: 从“double”到“GLfloat”截断
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(167): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(168): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(203): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(204): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(208): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(209): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(211): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(212): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(220): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(247): warning C4244: “-=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(256): warning C4244: “+=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(265): warning C4244: “+=”: 从“double”转换到“GLfloat”，可能丢失数据
-e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(274): warning C4244: “-=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: “APIENTRY”: 宏重定义
+  e:\大三第二学期\计算机图形学\大作业\project\libraries\include\glfw\glfw3.h(98): note: 参见“APIENTRY”的前一个定义
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\model.h(82): warning C4305: “参数”: 从“double”到“float”截断
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\movementcontroller.h(45): warning C4244: “+=”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\movementcontroller.h(49): warning C4305: “+=”: 从“double”到“float”截断
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(55): warning C4305: “参数”: 从“double”到“float”截断
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(240): warning C4244: “+=”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(286): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(287): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(291): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(292): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(294): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(295): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+e:\大三第二学期\计算机图形学\大作业\project\modelimport\modelimport\modelimport\modelwithlight.cpp(303): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
   SOIL.lib(SOIL.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
 LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
 LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
@@ -36,8 +26,6 @@ LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请�
 ResourceManager.obj : warning LNK4049: 已导入本地定义的符号 ___glewDeleteProgram
 ResourceManager.obj : warning LNK4049: 已导入本地定义的符号 ___glewGetUniformLocation
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewGetUniformLocation
-ResourceManager.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform1f
-shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform1f
 ResourceManager.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform3f
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform3f
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewAttachShader
@@ -51,6 +39,7 @@ shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewGetShaderInf
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewGetShaderiv
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewLinkProgram
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewShaderSource
+shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform1f
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform1i
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform2f
 shader.obj : warning LNK4049: 已导入本地定义的符号 ___glewUniform4f

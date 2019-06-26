@@ -19,9 +19,10 @@
 class Model
 {
 public:
-	void draw(Shader& shader,Shader &shader1,Shader &shader2)
+	void draw(Shader& shader,Shader &shader1,Shader &shader2,bool shadow,bool ball)
 	{
 		//printf("Circle: %f %f %f\n", bcircle.x, bcircle.y, hight);
+		//cout << this->meshes.size() << endl;
 		int i = 0;
 		for (std::vector<Mesh>::iterator it = this->meshes.begin(); this->meshes.end() != it; ++it)
 		{
@@ -29,39 +30,25 @@ public:
 				i++;
 				continue;
 			}
-			if (i == 21) {
-				it->draw(shader1, glm::vec3(0.572549f, 0.258824f, 0.858824f));
-			}
-			else if (this->is_pin[i] == 1) {
-				shader2.SetFloat("time", -3.1415926535f / 2.0f, true);
-				it->draw(shader2, glm::vec3(1.0f, 1.0f, 1.0f));
-			}
-			else if (i > 1 && this->is_pin[i-1] == 1){
-				//cout <<sin(glfwGetTime() / 10.0f) << endl;
-				shader2.SetFloat("time", -3.1415926535f/2.0f, true);
-				it->draw(shader2, glm::vec3(0.639216f, 0.478431f, 0.807843f));
+			if (shadow) {
+				if ((it - meshes.begin()) == 32 && ball) it->draw(shader, glm::vec3(0.5f, 0.5f, 0.5f));
+				else if (ball) continue;
+				else if ((it - meshes.begin()) != 32) it->draw(shader, glm::vec3(0.0f, 0.5f, 0.5f));
 			}
 			else {
-				it->draw(shader, glm::vec3(0.166667f, 0.598039f, 0.172549f));
+				if ((it - meshes.begin()) == 32) it->draw(shader1, glm::vec3(0.5f, 0.5f, 0.5f));
+				else it->draw(shader, glm::vec3(0.0f, 0.5f, 0.5f));
 			}
-			i++;
-			//std::cout << "draw" << endl;
 		}
-		//std::cout << this->hight << endl;
 		for (auto pair : this->Circles) {
-			//Circle c = pair.second;
-			//cout << c.x << " " << c.y << " " << c.r << endl;
 			//判断是否发生了撞击事件
 			if (!this->meshes[pair.first].flag && if_collision(this->bcircle, pair.second)) {
-				if (this->meshes[this->huawen[pair.first]].explode(shader2) && this->meshes[pair.first].explode(shader2)) {
+				if (this->meshes[pair.first].explode(shader2)) {
 					this->meshes[pair.first].flag = true;
-					this->meshes[this->huawen[pair.first]].flag = true;
-					cout << "撞到了" << this->cnumber[pair.first] << "号球！" << endl;
 				}
 				else {
 					PlaySound("boom.wav", NULL, SND_ASYNC | SND_FILENAME);
 					this->meshes[pair.first].draw(shader2, glm::vec3(1.0f, 1.0f, 1.0f));
-					this->meshes[this->huawen[pair.first]].draw(shader2, glm::vec3(0.639216f, 0.478431f, 0.807843f));
 				}
 			}
 		}
@@ -91,44 +78,26 @@ public:
 			return false;
 		}
 		//计算高度
-		this->hight = meshes[21].get_height();
-		this->bcircle = this->meshes[21].get_circle(this->hight);
-		for (int i = 0; i < 24; i++) {
-			if (this->is_pin[i] == 1) {
-				this->Circles[i] = this->meshes[i].get_circle(this->hight);
+		this->hight = meshes[32].get_height();
+		this->bcircle = this->meshes[32].get_circle(this->hight, 0.1);
+		cout << this->bcircle.r << " " << this->bcircle.x << " " << this->hight << " " << this->bcircle.y << endl;
+		for (int i = 33; i < 39; i++) {
+			if (1) {
+				this->Circles[i] = this->meshes[i].get_circle(this->hight, 6);
+				cout << this->Circles[i].r << " " << this->Circles[i].x << " " <<  this->Circles[i].y << endl;
 			}
 		}
-		//手动输入映射关系
-		this->cnumber[13] = 1;
-		this->cnumber[11] = 2;
-		this->cnumber[17] = 3;
-		this->cnumber[9] = 4;
-		this->cnumber[15] = 5;
-		this->cnumber[3] = 6;
-		this->cnumber[19] = 7;
-		this->cnumber[22] = 8;
-		this->cnumber[5] = 9;
-		this->cnumber[7] = 10;
-		this->huawen[13] = 14;
-		this->huawen[11] = 12;
-		this->huawen[17] = 18;
-		this->huawen[9] = 10;
-		this->huawen[15] = 16;
-		this->huawen[3] = 4;
-		this->huawen[19] = 20;
-		this->huawen[22] = 23;
-		this->huawen[5] = 6;
-		this->huawen[7] = 8;
 		return true;
 	}
 	//移动保龄球
-	float move_ball(int code) {
-		float returnvalue = 0.0f;
-		switch (code)
+	void move_ball(glm::vec3 ch) {
+		//float returnvalue = 0.0f;
+		/*switch (code)
 		{
 		case 0:
-			if (if_collision(bcircle, -5.906112)) returnvalue = 0.0;
-			else {
+			//if (if_collision(bcircle, -5.906112)) returnvalue = 0.0;
+			this->bcircle.x -= 30.0;
+			/*else {
 				Circle temp = this->bcircle;
 				temp.x = temp.x - 0.05f;
 				if (if_collision(temp, -5.906112)) {
@@ -139,11 +108,12 @@ public:
 					this->bcircle.x = this->bcircle.x - 0.05f;
 					returnvalue = -0.05f;
 				}
-			}
-			break;
-		case 1:
-			if (if_collision(bcircle, 5.882723)) returnvalue = 0.0;
-			else {
+			}*/
+		//	break;
+		//case 1:
+			//if (if_collision(bcircle, 5.882723)) returnvalue = 0.0;
+			//this->bcircle.x += 30.0;
+			/*else {
 				Circle temp = this->bcircle;
 				temp.x = temp.x + 0.05f;
 				if (if_collision(temp, 5.882723)) {
@@ -154,11 +124,12 @@ public:
 					this->bcircle.x = this->bcircle.x + 0.05f;
 					returnvalue = 0.05f;
 				}
-			}
-			break;
-		case 2:
-			if (if_collision(bcircle, -9.132236)) returnvalue = 0.0;
-			else {
+			}*/
+		//	break;
+		//case 2:
+			//if (if_collision(bcircle, -9.132236)) returnvalue = 0.0;
+			//this->bcircle.y -= 30.0;
+			/*else {
 				Circle temp = this->bcircle;
 				temp.y = temp.y - 0.05f;
 				if (if_collision(temp, -9.132236)) {
@@ -169,11 +140,12 @@ public:
 					this->bcircle.y = this->bcircle.y - 0.05f;
 					returnvalue = -0.05f;
 				}
-			}
-			break;
-		case 3:
-			if (if_collision(bcircle, 29.099463)) returnvalue = 0.0;
-			else {
+			}*/
+			//break;
+		//case 3:
+			//if (if_collision(bcircle, 29.099463)) returnvalue = 0.0;
+			//this->bcircle.y += 30.0;
+			/*else {
 				Circle temp = this->bcircle;
 				temp.y = temp.y + 0.05f;
 				if (if_collision(temp, 29.099463)) {
@@ -184,13 +156,16 @@ public:
 					this->bcircle.y = this->bcircle.y + 0.05f;
 					returnvalue = 0.05f;
 				}
-			}
-			break;
-		default:
-			break;
-			returnvalue = 0.0f;
-		}
-		return returnvalue;
+			}*/
+			//break;
+		//default:
+			//break;
+			//returnvalue = 0.0f;
+		//}
+		//this->bcircle.x = this->bcircle.x + 30.0f;
+		//cout << "bx: " << this->bcircle.x << endl;
+		this->bcircle.x += ch.x;
+		this->bcircle.y += ch.z;
 	}
 	~Model()
 	{
@@ -331,6 +306,7 @@ private:
 			}
 			std::string absolutePath = this->modelFileDir + "/" + textPath.C_Str();
 			LoadedTextMapType::const_iterator it = this->loadedTextureMap.find(absolutePath);
+			cout << absolutePath << endl;
 			if (it == this->loadedTextureMap.end()) // 检查是否已经加载过了
 			{
 				GLuint textId = TextureHelper::load2DTexture(absolutePath.c_str());

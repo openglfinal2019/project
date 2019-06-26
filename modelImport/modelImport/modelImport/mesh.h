@@ -60,22 +60,22 @@ public:
 			{
 				case aiTextureType_DIFFUSE:
 				{
-					glActiveTexture(GL_TEXTURE0 + texUnitCnt);
+					glActiveTexture(GL_TEXTURE0 + texUnitCnt+1);
 					glBindTexture(GL_TEXTURE_2D, it->id);
 					std::stringstream samplerNameStr;
-					samplerNameStr << "texture_diffuse" << diffuseCnt++;
+					samplerNameStr << "texture_diffuse" << ++diffuseCnt;
 					glUniform1i(glGetUniformLocation(shader.ID, 
-						samplerNameStr.str().c_str()), texUnitCnt++);
+						samplerNameStr.str().c_str()), ++texUnitCnt);
 				}
 				break;
 				case aiTextureType_SPECULAR:
 				{
-						glActiveTexture(GL_TEXTURE0 + texUnitCnt);
+						glActiveTexture(GL_TEXTURE0 + texUnitCnt+1);
 						glBindTexture(GL_TEXTURE_2D, it->id);
 						std::stringstream samplerNameStr;
-						samplerNameStr << "texture_specular" << specularCnt++;
+						samplerNameStr << "texture_specular" << ++specularCnt;
 						glUniform1i(glGetUniformLocation(shader.ID,
-									samplerNameStr.str().c_str()), texUnitCnt++);
+									samplerNameStr.str().c_str()), ++texUnitCnt);
 				}
 				break;
 				default:
@@ -106,8 +106,9 @@ public:
 		this->setupMesh();
 	}
 	bool explode(Shader& shader) {
-		time += 0.5;
-		if (time > 1.5f) {
+		//time = glfwGetTime();
+		time += 0.1f;
+		if (time > 0.5f) {
 			return true;
 		}
 		shader.SetFloat("time", time, true);
@@ -119,18 +120,18 @@ public:
 		glDeleteBuffers(1, &this->VBOId);
 		glDeleteBuffers(1, &this->EBOId);
 	}
-	Circle get_circle(float height) {
+	Circle get_circle(float height, float delta = 0) {
 		vector<glm::vec2> points;
-		float delta = 0.06955;
 		for (auto & v : this->vertData) {
-			if (v.position.y >= height-delta && v.position.y <= height) {
+			if (v.position.y >= height-delta && v.position.y <= height+delta) {
 				points.push_back(glm::vec2(v.position.x, v.position.z));
-				if (points.size() == 10) {
+				if (points.size() == 100) {
 					break;
 				}
 			}
 		}
-		Circle c = Calculate_circle(points[0], points[5], points[9]);
+		//cout << "point num; " << points.size() << endl;
+		Circle c = Calculate_circle(points[0], points[40], points[80]);
 		//cout << c.x << " " << c.y << " " << c.r << endl;
 		return c;
 	}
@@ -158,7 +159,7 @@ private:
 	std::vector<GLuint> indices;
 	std::vector<Texture> textures;
 	GLuint VAOId, VBOId, EBOId;
-	float time = -0.0f;
+	float time = -2.0f;
 
 	void setupMesh()  // 建立VAO,VBO等缓冲区
 	{

@@ -5,7 +5,7 @@
 #include <fstream>
 
 //光照位置
-glm::vec3 lampPos(0.0f, 0.5f, 0.7f);
+glm::vec3 lampPos(-2.0f, 8.0f, 0.0f);
 // Instantiate static variables
 std::map<std::string, Shader>       ResourceManager::Shaders;
 
@@ -77,20 +77,7 @@ Shader ResourceManager::loadShaderFromFile(const GLchar *vShaderFile, const GLch
 void ResourceManager::setCommonValue(Shader &shader) {
 	shader.Use();
 	// 设置光源属性 点光源
-	GLint lightAmbientLoc = glGetUniformLocation(shader.ID, "light.ambient");
-	GLint lightDiffuseLoc = glGetUniformLocation(shader.ID, "light.diffuse");
-	GLint lightSpecularLoc = glGetUniformLocation(shader.ID, "light.specular");
-	GLint lightPosLoc = glGetUniformLocation(shader.ID, "light.position");
-	GLint attConstant = glGetUniformLocation(shader.ID, "light.constant");
-	GLint attLinear = glGetUniformLocation(shader.ID, "light.linear");
-	GLint attQuadratic = glGetUniformLocation(shader.ID, "light.quadratic");
-
-	glUniform3f(lightAmbientLoc, 0.2f, 0.2f, 0.2f);
-	glUniform3f(lightDiffuseLoc, 1.0f, 1.0f, 1.0f);
-	glUniform3f(lightSpecularLoc, 1.0f, 1.0f, 1.0f);
+	GLint lightPosLoc = glGetUniformLocation(shader.ID, "lightPosition");
 	glUniform3f(lightPosLoc, lampPos.x, lampPos.y, lampPos.z);
-	// 设置衰减系数
-	glUniform1f(attConstant, 1.0f);
-	glUniform1f(attLinear, 0.09f);
-	glUniform1f(attQuadratic, 0.032f);
 }
+

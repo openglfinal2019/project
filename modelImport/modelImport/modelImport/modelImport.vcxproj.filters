@@ -50,6 +50,12 @@
     <ClInclude Include="physics.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="vertics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="movementController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="modelImport.rc">
@@ -58,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\libraries\libs\assimp.dll">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="model.geometry">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
