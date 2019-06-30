@@ -237,7 +237,7 @@ int main(int argc, char** argv)
 				Move.updateSpeech(deltaTime);
 				offset += Move.changeValue;
 				objModel.move_ball(Move.changeValue*1000.0f);
-				angle += Move.dirction.x > 0 ? 10*(Move.speech/0.03): -10 * (Move.speech / 0.03);
+				angle += Move.dirction.x > 0 ? -10*(Move.speech/0.03): 10 * (Move.speech / 0.03);
 				coord = Move.coord;
 				collision(Move.wall);
 			}

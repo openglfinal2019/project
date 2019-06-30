@@ -108,7 +108,7 @@ public:
 	bool explode(Shader& shader) {
 		//time = glfwGetTime();
 		time += 0.1f;
-		if (time > 0.5f) {
+		if (time > 0.0f) {
 			return true;
 		}
 		shader.SetFloat("time", time, true);
